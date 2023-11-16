@@ -3,28 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Text</title>
+    <title>Meeting Room Guide</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: black;
+            background-image: url('challenger.png'); /* Add the company background */
+            background-size: cover;
+            font-family: 'Helvetica', 'Arial', sans-serif;
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
+            justify-content: center;
+            height: 100vh; /* Set the height to 70% of the viewport height */
         }
 
-        p {
-            color: white;
-            font-size: 144px; /* Doubled the font size */
-            text-align: center;
-            font-family: Helvetica, sans-serif;
-            width: 66.67%;
+        #container {
+            display: flex;
+            flex-direction: column; /* Adjusted to a column layout */
+            max-width: 70%; /* Set the max-width to 70% of the viewport width */
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background for readability */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        #qr-code {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #summary {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #summary h2 {
+            margin-bottom: 20px; /* Add spacing below the heading */
+        }
+
+        #summary ol {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #summary li {
+            margin-bottom: 10px;
+        }
+
+        #call-to-action {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333; /* Adjust the color to your preference */
         }
     </style>
 </head>
 <body>
-    <p>One Claims Team</p>
+    <div id="container">
+        <div id="qr-code">
+            <object data="qr.svg" type="image/svg+xml" style="width: 100%;"></object>
+        </div>
+        <div id="summary">
+            <h2>Join Teams Meeting</h2>
+            <ol>
+                <li>Press "Call" on the display</li>
+                <li>Use the search to find "Teams Meeting"</li>
+                <li>Find "Video Conference ID" in meeting invitation.</li>
+            </ol>
+            <p id="call-to-action">Scan the QR-code for a detailed guide.</p>
+        </div>
+    </div>
 </body>
 </html>
